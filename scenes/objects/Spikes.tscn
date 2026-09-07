@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/objects/Spikes.gd" type="Script"]
+[ext_resource path="res://art/placeholder.png" type="Texture"]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16, 12 )
+
+[node name="Spikes" type="Area2D"]
+script = ExtResource( 1 )
+damage = 10
+
+[node name="Sprite" type="Sprite"]
+texture = ExtResource( 2 )
+scale = Vector2( 1.5, 1 )
+modulate = Color( 1, 0, 0, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D"]
+shape = SubResource( 1 )
