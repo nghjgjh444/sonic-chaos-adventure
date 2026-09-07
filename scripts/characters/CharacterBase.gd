@@ -1,4 +1,4 @@
-# CharacterBase.gd
+# CharacterBase.gd (UPDATED)
 # Base class for all playable characters
 
 extends KinematicBody2D
@@ -32,6 +32,7 @@ var max_boost_energy = 100.0
 var shield_type = null
 var is_invincible = false
 var invincible_timer = 0.0
+var player_index = 0
 
 # State
 enum STATE {
@@ -61,6 +62,7 @@ signal state_changed(new_state)
 signal died
 
 func _ready():
+	add_to_group("players")
 	sprite = $AnimatedSprite
 	collision_shape = $CollisionShape2D
 	camera = $Camera2D if has_node("Camera2D") else null
@@ -68,7 +70,7 @@ func _ready():
 	if camera:
 		camera.set_as_toplevel(true)
 
-	func _process(delta):
+func _process(delta):
 	if is_invincible:
 		invincible_timer -= delta
 		if invincible_timer <= 0:

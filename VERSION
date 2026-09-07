@@ -1,0 +1,12 @@
+# VERSION
+0.1.0-alpha
+Release Date: 2026-09-07
+
+Initial playable build with:
+- 6 playable characters
+- 5 game zones
+- Character progression
+- Local multiplayer support
+- Network multiplayer (experimental)
+- In-game chat
+- Save system
