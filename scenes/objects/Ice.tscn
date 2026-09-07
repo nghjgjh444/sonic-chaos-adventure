@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/objects/EnvironmentalHazard.gd" type="Script"]
+[ext_resource path="res://art/placeholder.png" type="Texture"]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 32 )
+
+[node name="Ice" type="Area2D"]
+script = ExtResource( 1 )
+hazard_type = "ice"
+damage = 0
+effect_duration = 2.0
+
+[node name="Sprite" type="Sprite"]
+texture = ExtResource( 2 )
+scale = Vector2( 2, 2 )
+modulate = Color( 0.3, 0.8, 1, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D"]
+shape = SubResource( 1 )

@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/enemies/MetalSonicBoss.gd" type="Script"]
+[ext_resource path="res://art/placeholder.png" type="Texture"]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 18.0
+height = 48.0
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 28.0
+height = 68.0
+
+[node name="MetalSonicBoss" type="KinematicBody2D"]
+script = ExtResource( 1 )
+boss_name = "Metal Sonic"
+max_health = 150
+damage = 12
+phase_two_health = 100
+phase_three_health = 50
+
+[node name="Sprite" type="Sprite"]
+texture = ExtResource( 2 )
+scale = Vector2( 2.5, 2.5 )
+modulate = Color( 0.8, 0.8, 0.8, 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite"]
+texture = ExtResource( 2 )
+animation = "idle"
+frame = 0
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D"]
+shape = SubResource( 1 )
+
+[node name="AttackArea" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+shape = SubResource( 2 )
+
+[node name="HealthBar" type="ProgressBar"]
+anchor_top = -0.5
+anchor_right = 1.0
+margin_top = -60.0
+margin_right = 0.0
+margin_bottom = -40.0
+value = 100.0

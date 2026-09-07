@@ -1,0 +1,94 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scripts/levels/TestLevel.gd" type="Script"]
+[ext_resource path="res://scenes/player/Sonic.tscn" type="PackedScene"]
+[ext_resource path="res://scenes/enemies/BasicBadnik.tscn" type="PackedScene"]
+[ext_resource path="res://scenes/enemies/FlyingBadnik.tscn" type="PackedScene"]
+[ext_resource path="res://scenes/objects/Ring.tscn" type="PackedScene"]
+[ext_resource path="res://scenes/objects/Spring.tscn" type="PackedScene"]
+[ext_resource path="res://scenes/objects/BoostPad.tscn" type="PackedScene"]
+[ext_resource path="res://art/placeholder.png" type="Texture"]
+
+[node name="TestLevel" type="Node2D"]
+script = ExtResource( 1 )
+level_name = "Test Level"
+level_zone = 0
+
+[node name="Background" type="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 2560.0
+margin_bottom = 1440.0
+color = Color( 0.3, 0.7, 0.9, 1 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 100, 200 )
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="BasicBadnik" parent="Enemies" instance=ExtResource( 3 )]
+position = Vector2( 400, 300 )
+
+[node name="BasicBadnik2" parent="Enemies" instance=ExtResource( 3 )]
+position = Vector2( 700, 300 )
+
+[node name="FlyingBadnik" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 1000, 200 )
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="Ring" parent="Objects" instance=ExtResource( 5 )]
+position = Vector2( 300, 250 )
+
+[node name="Ring2" parent="Objects" instance=ExtResource( 5 )]
+position = Vector2( 350, 200 )
+
+[node name="Ring3" parent="Objects" instance=ExtResource( 5 )]
+position = Vector2( 400, 150 )
+
+[node name="Spring" parent="Objects" instance=ExtResource( 6 )]
+position = Vector2( 600, 350 )
+
+[node name="BoostPad" parent="Objects" instance=ExtResource( 7 )]
+position = Vector2( 1200, 300 )
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="HUD"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ZoneLabel" type="Label" parent="HUD/Control"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 300.0
+margin_bottom = 60.0
+text = "Test Level"
+
+[node name="RingsLabel" type="Label" parent="HUD/Control"]
+margin_left = 20.0
+margin_top = 70.0
+margin_right = 300.0
+margin_bottom = 110.0
+text = "RINGS: 000"
+
+[node name="LivesLabel" type="Label" parent="HUD/Control"]
+margin_left = 20.0
+margin_top = 120.0
+margin_right = 300.0
+margin_bottom = 160.0
+text = "LIVES: 03"
+
+[node name="HealthBar" type="ProgressBar" parent="HUD/Control"]
+margin_left = 20.0
+margin_top = 170.0
+margin_right = 200.0
+margin_bottom = 200.0
+value = 100.0
+
+[node name="BoostBar" type="ProgressBar" parent="HUD/Control"]
+margin_left = 20.0
+margin_top = 210.0
+margin_right = 200.0
+margin_bottom = 240.0
+value = 100.0
