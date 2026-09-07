@@ -1,0 +1,88 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/ui/MainMenu.gd" type="Script"]
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.1, 0.1, 0.15, 1 )
+
+[node name="VBoxContainer" type="VBoxContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = -200.0
+margin_right = 150.0
+margin_bottom = 200.0
+alignment = 1
+
+[node name="Title" type="Label"]
+margin_top = 20.0
+margin_right = 300.0
+margin_bottom = 80.0
+text = "SONIC: CHAOS ADVENTURE"
+align = 1
+valign = 1
+
+[node name="Spacer" type="Control"]
+margin_top = 80.0
+margin_right = 300.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="StartButton" type="Button"]
+margin_top = 100.0
+margin_right = 300.0
+margin_bottom = 140.0
+text = "START GAME"
+
+[node name="MultiplayerButton" type="Button"]
+margin_top = 140.0
+margin_right = 300.0
+margin_bottom = 180.0
+text = "MULTIPLAYER"
+
+[node name="LevelSelectButton" type="Button"]
+margin_top = 180.0
+margin_right = 300.0
+margin_bottom = 220.0
+text = "LEVEL SELECT"
+
+[node name="CharacterSelectButton" type="Button"]
+margin_top = 220.0
+margin_right = 300.0
+margin_bottom = 260.0
+text = "CHARACTER SELECT"
+
+[node name="EmeraldsButton" type="Button"]
+margin_top = 260.0
+margin_right = 300.0
+margin_bottom = 300.0
+text = "CHAOS EMERALDS"
+
+[node name="SettingsButton" type="Button"]
+margin_top = 300.0
+margin_right = 300.0
+margin_bottom = 340.0
+text = "SETTINGS"
+
+[node name="QuitButton" type="Button"]
+margin_top = 340.0
+margin_right = 300.0
+margin_bottom = 380.0
+text = "QUIT"
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/MultiplayerButton" to="." method="_on_multiplayer_pressed"]
+[connection signal="pressed" from="VBoxContainer/LevelSelectButton" to="." method="_on_level_select_pressed"]
+[connection signal="pressed" from="VBoxContainer/CharacterSelectButton" to="." method="_on_character_select_pressed"]
+[connection signal="pressed" from="VBoxContainer/EmeraldsButton" to="." method="_on_emeralds_pressed"]
+[connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_pressed"]

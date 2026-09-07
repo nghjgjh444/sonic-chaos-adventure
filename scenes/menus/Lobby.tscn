@@ -1,0 +1,77 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/ui/Lobby.gd" type="Script"]
+
+[node name="Lobby" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.1, 0.1, 0.15, 1 )
+
+[node name="Title" type="Label"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 200.0
+margin_bottom = 60.0
+text = "LOCAL MULTIPLAYER"
+
+[node name="VBoxContainer" type="VBoxContainer"]
+margin_left = 40.0
+margin_top = 100.0
+margin_right = 1240.0
+margin_bottom = 600.0
+
+[node name="NumPlayersLabel" type="Label"]
+margin_right = 1200.0
+margin_bottom = 40.0
+text = "Number of Players:"
+
+[node name="HBoxContainer" type="HBoxContainer"]
+margin_top = 50.0
+margin_right = 1200.0
+margin_bottom = 90.0
+
+[node name="Num2Button" type="Button"]
+margin_right = 100.0
+margin_bottom = 40.0
+text = "2 Players"
+
+[node name="Num3Button" type="Button"]
+margin_left = 120.0
+margin_right = 220.0
+margin_bottom = 40.0
+text = "3 Players"
+
+[node name="Num4Button" type="Button"]
+margin_left = 240.0
+margin_right = 340.0
+margin_bottom = 40.0
+text = "4 Players"
+
+[node name="CharacterSelectLabel" type="Label"]
+margin_top = 100.0
+margin_right = 1200.0
+margin_bottom = 140.0
+text = "Character Selection:"
+
+[node name="NextButton" type="Button"]
+margin_top = 450.0
+margin_right = 1200.0
+margin_bottom = 490.0
+text = "NEXT"
+
+[node name="BackButton" type="Button"]
+margin_top = 500.0
+margin_right = 1200.0
+margin_bottom = 540.0
+text = "BACK"
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Num2Button" to="." method="_on_2_players_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Num3Button" to="." method="_on_3_players_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Num4Button" to="." method="_on_4_players_pressed"]
+[connection signal="pressed" from="VBoxContainer/NextButton" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_pressed"]

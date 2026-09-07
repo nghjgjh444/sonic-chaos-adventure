@@ -1,0 +1,70 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/ui/LevelSelect.gd" type="Script"]
+
+[node name="LevelSelect" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.1, 0.15, 0.2, 1 )
+
+[node name="Title" type="Label"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 200.0
+margin_bottom = 60.0
+text = "LEVEL SELECT"
+valign = 1
+
+[node name="VBoxContainer" type="VBoxContainer"]
+margin_left = 20.0
+margin_top = 80.0
+margin_right = 1260.0
+margin_bottom = 700.0
+alignment = 1
+
+[node name="GreenHillButton" type="Button"]
+margin_right = 1240.0
+margin_bottom = 50.0
+text = "Green Hill Zone"
+
+[node name="ChemicalZoneButton" type="Button"]
+margin_top = 70.0
+margin_right = 1240.0
+margin_bottom = 120.0
+text = "Chemical Zone"
+
+[node name="SandopolisButton" type="Button"]
+margin_top = 140.0
+margin_right = 1240.0
+margin_bottom = 190.0
+text = "Sandopolis Zone"
+
+[node name="EmeraldCoastButton" type="Button"]
+margin_top = 210.0
+margin_right = 1240.0
+margin_bottom = 260.0
+text = "Emerald Coast Zone"
+
+[node name="CityEscapeButton" type="Button"]
+margin_top = 280.0
+margin_right = 1240.0
+margin_bottom = 330.0
+text = "City Escape Zone"
+
+[node name="BackButton" type="Button"]
+margin_top = 350.0
+margin_right = 1240.0
+margin_bottom = 400.0
+text = "BACK"
+
+[connection signal="pressed" from="VBoxContainer/GreenHillButton" to="." method="_on_green_hill_pressed"]
+[connection signal="pressed" from="VBoxContainer/ChemicalZoneButton" to="." method="_on_chemical_pressed"]
+[connection signal="pressed" from="VBoxContainer/SandopolisButton" to="." method="_on_sandopolis_pressed"]
+[connection signal="pressed" from="VBoxContainer/EmeraldCoastButton" to="." method="_on_emerald_coast_pressed"]
+[connection signal="pressed" from="VBoxContainer/CityEscapeButton" to="." method="_on_city_escape_pressed"]
+[connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_pressed"]
